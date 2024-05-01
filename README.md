@@ -22,33 +22,40 @@ Dilate the Image
  
 ## Program:
 # Import the necessary packages
+```
 import numpy as np
 import cv2
 import matplotlib.pyplot as plt
+```
 
 
 # Create the Text using cv2.putText
+```
 img = np.zeros((100,400),dtype='uint8')
 font = cv2.FONT_HERSHEY_SIMPLEX
 cv2.putText(img,'MADHAV',(40,70),font,2,(255),5,cv2.LINE_AA)
 plt.imshow(img)
 plt.axis('off')
-
+```
 
 # Create the structuring element
+```
 kernel = np.ones((5,5),np.uint8)
 kernel1 = cv2.getStructuringElement(cv2.MORPH_CROSS,(5,5))
-
+```
 # Erode the image
+```
 img_erode = cv2.erode(img,kernel1)
 plt.imshow(img_erode)
 plt.axis('off')
+```
 
 # Dilate the image
+```
 img_dilate = cv2.dilate(img,kernel1)
 plt.imshow(img_dilate)
 plt.axis('off')
-
+```
 
 
 
